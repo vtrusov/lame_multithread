@@ -1,0 +1,8 @@
+CC=cl.exe
+
+INCDIR="include"
+LAMEDIR="lame"
+PTHREADDIR="pthread"
+
+all : 
+	$(CC)/I$(INCDIR) /I$(PTHREADDIR) /I$(LAMEDIR) /Fo.\obj\ /EHsc src/*.cpp  -DHAVE_STRUCT_TIMESPEC /FeWavConverter.exe  /link libmp3lame.lib pthreadVC2.lib
